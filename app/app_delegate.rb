@@ -4,8 +4,7 @@ class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     
-    img_texture_black = "subtle_carbon".uiimage
-    img_texture_white = "subtle_dots".uiimage
+    img_texture_black = "back/plain".uiimage
     img_back          = "tabbar_background".uiimage
     img_selection     = "tabbar_cell_background".uiimage
 
