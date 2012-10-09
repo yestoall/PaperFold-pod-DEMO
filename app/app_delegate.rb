@@ -4,14 +4,16 @@ class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     
-    back      = "tabbar_background".uiimage
-    selection = "tabbar_cell_background".uiimage
+    img_texture_black = "subtle_carbon".uiimage
+    img_texture_white = "subtle_dots".uiimage
+    img_back          = "tabbar_background".uiimage
+    img_selection     = "tabbar_cell_background".uiimage
 
-    UINavigationBar.appearance.setBackgroundImage(back, forBarMetrics: UIBarMetricsDefault)
+    UINavigationBar.appearance.setBackgroundImage(img_texture_black, forBarMetrics: UIBarMetricsDefault)
 
     tab = UITabBarController.alloc.init
-    tab.tabBar.setBackgroundImage(back)
-    tab.tabBar.setSelectionIndicatorImage(selection)
+    tab.tabBar.setBackgroundImage(img_back)
+    tab.tabBar.setSelectionIndicatorImage(img_selection)
     
     timeline = TimelineViewController.alloc.initWithTabBar
     things   = ThingsViewController.alloc.initWithTabBar
