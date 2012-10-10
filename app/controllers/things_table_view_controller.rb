@@ -1,7 +1,9 @@
 class ThingsTableViewController < UITableViewController
 
   def bind_with_thing(thing)
-    @thing = thing
+    @thing = thing["data"]
+    @kind = thing["kind"]
+    navigationItem.title = "#{@kind}"
     view.reloadData
   end
   
@@ -25,7 +27,7 @@ class ThingsTableViewController < UITableViewController
   end
 
   def numberOfSectionsInTableView(tableView)
-    0
+    1
   end
 
   def tableView(tableView, numberOfRowsInSection:section)
@@ -33,16 +35,16 @@ class ThingsTableViewController < UITableViewController
   end
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
-    # id = "thing_detail"
-    # cell = tableView.dequeueReusableCellWithIdentifier(id) || begin
-    #   cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier:id)
-    #   cell
-    # end
+    id = "thing_detail"
+    cell = tableView.dequeueReusableCellWithIdentifier(id) || begin
+      cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier:id)
+      cell
+    end
 
-    # thing = @things[indexPath.row]
-    # cell.textLabel.text = thing["name"]
+    thing = @thing[indexPath.row]
+    cell.textLabel.text = thing["name"]
 
-    # cell
+    cell
   end
 
 end

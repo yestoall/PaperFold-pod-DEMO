@@ -12,9 +12,16 @@ class ThingsViewController < UITableViewController
   def viewDidLoad
     super
 
+    view.rowHeight = 60
+    view.backgroundColor = 0x111111.uicolor
+    view.separatorStyle = UITableViewCellSeparatorStyleNone
+
+    navigationItem.title = "your BAG"
+
     Dispatch::Queue.concurrent("mc-data").async {
       data = File.read("#{App.resources_path}/things.json")
       @things = BW::JSON.parse(data)
+      self.view.reloadData
     }
   end
 
@@ -29,21 +36,33 @@ class ThingsViewController < UITableViewController
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
     id = "thing"
     cell = tableView.dequeueReusableCellWithIdentifier(id) || begin
-      cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier:id)
+      cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleValue1, reuseIdentifier:id)
+      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator
+      cell.backgroundColor = 0xEEEEEE.uicolor
       cell
     end
 
     thing = @things[indexPath.row]
-    cell.textLabel.text = thing["kind"]
+
+
+
+    cell.textLabel.text            = thing["kind"]
+    cell.textLabel.textColor       = 0x222222.uicolor
+    cell.textLabel.font            = UIFont.boldSystemFontOfSize(20)
+
+    cell.detailTextLabel.text      = "#{thing["data"].length}"
+    cell.detailTextLabel.textColor = 0xCCCCCC.uicolor
+    cell.detailTextLabel.font      = UIFont.systemFontOfSize(18)
+
+    cell.selectionStyle            = UITableViewCellSelectionStyleGray;
 
     cell
   end
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
-    tc = ThingsTableViewController.init.alloc
-    # self.navigationController.pushViewController(tc, animated:true)
-    # things = @things[indexPath.row]
-    # tc.bind_with_thing(things)
+    thing_controller = ThingsTableViewController.alloc.init
+    navigationController << thing_controller
+    thing_controller.bind_with_thing(@things[indexPath.row])
   end
 
 end
