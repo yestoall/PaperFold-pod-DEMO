@@ -1,4 +1,4 @@
-class ThingsViewController < UIViewController
+class ThingsViewController < UITableViewController
 
   def initWithTabBar
     me = init
@@ -11,7 +11,39 @@ class ThingsViewController < UIViewController
 
   def viewDidLoad
     super
-    # Do any additional setup after loading the view.
+
+    Dispatch::Queue.concurrent("mc-data").async {
+      data = File.read("#{App.resources_path}/things.json")
+      @things = BW::JSON.parse(data)
+    }
+  end
+
+  def numberOfSectionsInTableView(tableView)
+    1
+  end
+
+  def tableView(tableView, numberOfRowsInSection:section)
+    @things ? @things.length : 0
+  end
+
+  def tableView(tableView, cellForRowAtIndexPath:indexPath)
+    id = "thing"
+    cell = tableView.dequeueReusableCellWithIdentifier(id) || begin
+      cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier:id)
+      cell
+    end
+
+    thing = @things[indexPath.row]
+    cell.textLabel.text = thing["kind"]
+
+    cell
+  end
+
+  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+    tc = ThingsTableViewController.init.alloc
+    # self.navigationController.pushViewController(tc, animated:true)
+    # things = @things[indexPath.row]
+    # tc.bind_with_thing(things)
   end
 
 end

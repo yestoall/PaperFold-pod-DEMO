@@ -17,10 +17,10 @@ class AppDelegate
     timeline = TimelineViewController.alloc.initWithTabBar
     things   = ThingsViewController.alloc.initWithTabBar
     wish     = WishViewController.alloc.initWithTabBar
-    lists    = ListsViewController.alloc.initWithTabBar
+    user     = UserViewController.alloc.initWithTabBar
     add      = AddViewController.alloc.initWithTabBar
 
-    tab.viewControllers = [timeline, things, wish, lists, add]
+    tab.viewControllers = [timeline, things, wish, user, add]
     tab.title           = "your BAG"
     
     @window.rootViewController = UINavigationController.alloc.initWithRootViewController(tab)
