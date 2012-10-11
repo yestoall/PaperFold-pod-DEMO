@@ -6,6 +6,7 @@ require "teacup"
 require "sugarcube"
 require "formotion"
 require "geomotion"
+require "motion-cocoapods"
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
@@ -14,4 +15,8 @@ Motion::Project::App.setup do |app|
   app.icons            = ["icon", "icon@2"]
   app.prerendered_icon = true
   app.fonts            = ["bag_app"]
+
+  app.pods do
+    pod "StyledTableViewCell-for-iOS"
+  end
 end

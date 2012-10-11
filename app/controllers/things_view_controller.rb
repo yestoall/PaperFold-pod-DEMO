@@ -12,9 +12,9 @@ class ThingsViewController < UITableViewController
   def viewDidLoad
     super
 
-    view.rowHeight = 60
-    view.backgroundColor = 0x111111.uicolor
-    view.separatorStyle = UITableViewCellSeparatorStyleNone
+    view.rowHeight         = 60
+    view.separatorStyle    = UITableViewCellSeparatorStyleNone
+    view.setSeparatorColor(0xCCCCCC.uicolor)
 
     navigationItem.title = "your BAG"
 
@@ -36,15 +36,17 @@ class ThingsViewController < UITableViewController
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
     id = "thing"
     cell = tableView.dequeueReusableCellWithIdentifier(id) || begin
-      cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleValue1, reuseIdentifier:id)
-      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator
+      # cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleValue1, reuseIdentifier:id)
+      cell = StyledTableViewCell.alloc.initWithStyle(UITableViewCellStyleValue1, reuseIdentifier:id)
+
+      cell.accessoryType   = UITableViewCellAccessoryDisclosureIndicator
       cell.backgroundColor = 0xEEEEEE.uicolor
+      # cell.setStyledTableViewCellSelectionStyle(StyledTableViewCellSelectionStyleYellow)
+
       cell
     end
 
     thing = @things[indexPath.row]
-
-
 
     cell.textLabel.text            = thing["kind"]
     cell.textLabel.textColor       = 0x222222.uicolor

@@ -1,0 +1,106 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<enum name='StyledTableViewCellSelectionGradientDirectionDiagonalBottomLeftToTopRight' value='3'/>
+<enum name='StyledTableViewCellSelectionGradientDirectionDiagonalTopLeftToBottomRight' value='2'/>
+<enum name='StyledTableViewCellSelectionGradientDirectionHorizontal' value='1'/>
+<enum name='StyledTableViewCellSelectionGradientDirectionVertical' value='0'/>
+<enum name='StyledTableViewCellSelectionStyleCyan' value='1'/>
+<enum name='StyledTableViewCellSelectionStyleDefault' value='0'/>
+<enum name='StyledTableViewCellSelectionStyleGreen' value='2'/>
+<enum name='StyledTableViewCellSelectionStylePurple' value='4'/>
+<enum name='StyledTableViewCellSelectionStyleYellow' value='3'/>
+<class name='StyledTableViewCell'>
+<method selector='dashGap'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='dashStroke'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='dashWidth'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='setDashGap:'>
+<arg index='0' type='i' name='dashGap' declared_type='int'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDashStroke:'>
+<arg index='0' type='i' name='dashStroke' declared_type='int'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDashWidth:'>
+<arg index='0' type='i' name='dashWidth' declared_type='int'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDashWidth:dashGap:dashStroke:'>
+<arg index='0' type='i' name='dashWidth' declared_type='int'/>
+<arg index='1' type='i' name='dashGap' declared_type='int'/>
+<arg index='2' type='i' name='dashStroke' declared_type='int'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSelectedBackgroundViewGradientColors:'>
+<arg index='0' type='@' name='colors' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSelectionGradientDirection:'>
+<arg index='0' type='i' name='direction' declared_type='StyledTableViewCellSelectionGradientDirection'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSeparatorColor:'>
+<arg index='0' type='@' name='separatorColor' declared_type='UIColor*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setStyledTableViewCellSelectionStyle:'>
+<arg index='0' type='i' name='styledTableViewCellSelectionStyle' declared_type='StyledTableViewCellSelectionStyle'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='styledTableViewCellSelectionStyle'>
+<retval type='i' declared_type='StyledTableViewCellSelectionStyle'/>
+</method>
+</class>
+<class name='StyledTableViewCellBackgroundView'>
+<method selector='dashGap'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='dashStroke'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='dashWidth'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='separatorColor'>
+<retval type='@' declared_type='UIColor*'/>
+</method>
+<method selector='setDashGap:'>
+<arg index='0' type='i' name='dashGap' declared_type='int'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDashStroke:'>
+<arg index='0' type='i' name='dashStroke' declared_type='int'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDashWidth:'>
+<arg index='0' type='i' name='dashWidth' declared_type='int'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSeparatorColor:'>
+<arg index='0' type='@' name='separatorColor' declared_type='UIColor*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='StyledTableViewCellSelectedBackgroundView'>
+<method selector='gradientDirection'>
+<retval type='i' declared_type='StyledTableViewCellSelectionGradientDirection'/>
+</method>
+<method selector='selectedBackgroundGradientColors'>
+<retval type='@' declared_type='NSArray*'/>
+</method>
+<method selector='setGradientDirection:'>
+<arg index='0' type='i' name='gradientDirection' declared_type='StyledTableViewCellSelectionGradientDirection'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSelectedBackgroundGradientColors:'>
+<arg index='0' type='@' name='selectedBackgroundGradientColors' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+</signatures>
