@@ -22,7 +22,13 @@ class AppDelegate
     
     @window.rootViewController = UINavigationController.alloc.initWithRootViewController(tab)
     @window.makeKeyAndVisible
-    
+
+    # testing Parse
+    # Parse.setApplicationId("Ks9i6obkdtMpCXaQVV6SHZCym0uTdmwTCGSUhnUc", clientKey:"RkC2BwMyoSoGTEtOaWGx92ZWyf191FM4tu8oJ0i5")
+    # data = PFObject.objectWithClassName("ThingObject")
+    # data.setObject("bar", forKey:"foo")
+    # data.save
+
     true
   end
 end

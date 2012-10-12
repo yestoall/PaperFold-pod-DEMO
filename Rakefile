@@ -18,5 +18,9 @@ Motion::Project::App.setup do |app|
 
   app.pods do
     pod "StyledTableViewCell-for-iOS"
+    pod "SVProgressHUD"
+    pod "Parse"
   end
+
+  # AFNetworking
 end

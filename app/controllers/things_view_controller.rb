@@ -18,10 +18,15 @@ class ThingsViewController < UITableViewController
 
     navigationItem.title = "your BAG"
 
+    # loading = SVProgressHUD.alloc.init
+    # SVProgressHUD.showWithStatus "loading"
+    SVProgressHUD.show
+
     Dispatch::Queue.concurrent("mc-data").async {
       data = File.read("#{App.resources_path}/things.json")
       @things = BW::JSON.parse(data)
       self.view.reloadData
+      SVProgressHUD.dismiss
     }
   end
 
@@ -41,7 +46,7 @@ class ThingsViewController < UITableViewController
 
       cell.accessoryType   = UITableViewCellAccessoryDisclosureIndicator
       cell.backgroundColor = 0xEEEEEE.uicolor
-      # cell.setStyledTableViewCellSelectionStyle(StyledTableViewCellSelectionStyleYellow)
+      # cell.setStyledTableViewCellSelectionStyle(5)
 
       cell
     end
