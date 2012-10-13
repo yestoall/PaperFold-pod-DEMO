@@ -11,14 +11,14 @@ class AppDelegate
     tab.tabBar.setBackgroundImage("tabbar_background".uiimage)
     tab.tabBar.setSelectionIndicatorImage("tabbar_cell_background".uiimage)
     
-    timeline = TimelineViewController.alloc.initWithTabBar
-    things   = ThingsViewController.alloc.initWithTabBar
-    wish     = WishViewController.alloc.initWithTabBar
-    user     = UserViewController.alloc.initWithTabBar
-    add      = AddViewController.alloc.initWithTabBar
+    timeline = TimelineController.alloc.initWithTabBar
+    things   = ConsumedController.alloc.initWithTabBar
+    wish     = WishedController.alloc.initWithTabBar
+    user     = UserController.alloc.initWithTabBar
+    add      = AddController.alloc.initWithTabBar
 
     tab.viewControllers = [timeline, things, wish, user, add]
-    tab.title           = "your BAG"
+    tab.title           = "BAG"
     
     @window.rootViewController = UINavigationController.alloc.initWithRootViewController(tab)
     @window.makeKeyAndVisible
@@ -28,7 +28,7 @@ class AppDelegate
     # data = PFObject.objectWithClassName("ThingObject")
     # data.setObject("bar", forKey:"foo")
     # data.save
-
     true
   end
 end
+    

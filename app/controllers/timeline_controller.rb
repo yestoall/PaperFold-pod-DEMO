@@ -1,4 +1,4 @@
-class TimelineViewController < UIViewController
+class TimelineController < UIViewController
 
   def initWithTabBar
     me = init

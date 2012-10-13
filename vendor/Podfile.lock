@@ -1,16 +1,13 @@
 
 PODS:
-- Parse (1.0.39)
 - SVProgressHUD (0.8)
 - StyledTableViewCell-for-iOS (1.0)
 
 DEPENDENCIES:
-- Parse
 - SVProgressHUD
 - StyledTableViewCell-for-iOS
 
 SPEC CHECKSUMS:
-  Parse: 4d691a57a5c19d57bce1f168d522e0c062a8cb64
   SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
   StyledTableViewCell-for-iOS: 0e687f1cc033ceae0c1fb8c92a4cb38ec8690010
 

@@ -1,87 +1,84 @@
 <?xml version='1.0'?>
 <signatures version='1.0'>
-<enum name='SVProgressHUDMaskTypeBlack' value='3'/>
-<enum name='SVProgressHUDMaskTypeClear' value='2'/>
-<enum name='SVProgressHUDMaskTypeGradient' value='4'/>
-<enum name='SVProgressHUDMaskTypeNone' value='1'/>
-<enum name='StyledTableViewCellSelectionGradientDirectionDiagonalBottomLeftToTopRight' value='3'/>
-<enum name='StyledTableViewCellSelectionGradientDirectionDiagonalTopLeftToBottomRight' value='2'/>
-<enum name='StyledTableViewCellSelectionGradientDirectionHorizontal' value='1'/>
-<enum name='StyledTableViewCellSelectionGradientDirectionVertical' value='0'/>
-<enum name='StyledTableViewCellSelectionStyleCyan' value='1'/>
-<enum name='StyledTableViewCellSelectionStyleDefault' value='0'/>
-<enum name='StyledTableViewCellSelectionStyleGreen' value='2'/>
-<enum name='StyledTableViewCellSelectionStylePurple' value='4'/>
-<enum name='StyledTableViewCellSelectionStyleYellow' value='3'/>
-<function name='ParseDummyFunction'>
-<retval type='i' declared_type='int'/>
-</function>
+<enum value='3' name='SVProgressHUDMaskTypeBlack'/>
+<enum value='2' name='SVProgressHUDMaskTypeClear'/>
+<enum value='4' name='SVProgressHUDMaskTypeGradient'/>
+<enum value='1' name='SVProgressHUDMaskTypeNone'/>
+<enum value='3' name='StyledTableViewCellSelectionGradientDirectionDiagonalBottomLeftToTopRight'/>
+<enum value='2' name='StyledTableViewCellSelectionGradientDirectionDiagonalTopLeftToBottomRight'/>
+<enum value='1' name='StyledTableViewCellSelectionGradientDirectionHorizontal'/>
+<enum value='0' name='StyledTableViewCellSelectionGradientDirectionVertical'/>
+<enum value='1' name='StyledTableViewCellSelectionStyleCyan'/>
+<enum value='0' name='StyledTableViewCellSelectionStyleDefault'/>
+<enum value='2' name='StyledTableViewCellSelectionStyleGreen'/>
+<enum value='4' name='StyledTableViewCellSelectionStylePurple'/>
+<enum value='3' name='StyledTableViewCellSelectionStyleYellow'/>
 <class name='SVProgressHUD'>
-<method class_method='true' selector='dismiss'>
+<method selector='dismiss' class_method='true'>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='dismissWithError:'>
-<arg name='errorString' type='@' index='0' declared_type='NSString*'/>
+<method selector='dismissWithError:' class_method='true'>
+<arg type='@' declared_type='NSString*' index='0' name='errorString'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='dismissWithError:afterDelay:'>
-<arg name='errorString' type='@' index='0' declared_type='NSString*'/>
-<arg name='seconds' type='d' index='1' declared_type='NSTimeInterval'/>
+<method selector='dismissWithError:afterDelay:' class_method='true'>
+<arg type='@' declared_type='NSString*' index='0' name='errorString'/>
+<arg type='d' declared_type='NSTimeInterval' index='1' name='seconds'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='dismissWithSuccess:'>
-<arg name='successString' type='@' index='0' declared_type='NSString*'/>
+<method selector='dismissWithSuccess:' class_method='true'>
+<arg type='@' declared_type='NSString*' index='0' name='successString'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='dismissWithSuccess:afterDelay:'>
-<arg name='successString' type='@' index='0' declared_type='NSString*'/>
-<arg name='seconds' type='d' index='1' declared_type='NSTimeInterval'/>
+<method selector='dismissWithSuccess:afterDelay:' class_method='true'>
+<arg type='@' declared_type='NSString*' index='0' name='successString'/>
+<arg type='d' declared_type='NSTimeInterval' index='1' name='seconds'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='isVisible'>
+<method selector='isVisible' class_method='true'>
 <retval type='B' declared_type='BOOL'/>
 </method>
-<method class_method='true' selector='setStatus:'>
-<arg name='string' type='@' index='0' declared_type='NSString*'/>
+<method selector='setStatus:' class_method='true'>
+<arg type='@' declared_type='NSString*' index='0' name='string'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='show'>
+<method selector='show' class_method='true'>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='showErrorWithStatus:'>
-<arg name='string' type='@' index='0' declared_type='NSString*'/>
+<method selector='showErrorWithStatus:' class_method='true'>
+<arg type='@' declared_type='NSString*' index='0' name='string'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='showErrorWithStatus:duration:'>
-<arg name='string' type='@' index='0' declared_type='NSString*'/>
-<arg name='duration' type='d' index='1' declared_type='NSTimeInterval'/>
+<method selector='showErrorWithStatus:duration:' class_method='true'>
+<arg type='@' declared_type='NSString*' index='0' name='string'/>
+<arg type='d' declared_type='NSTimeInterval' index='1' name='duration'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='showImage:status:'>
-<arg name='image' type='@' index='0' declared_type='UIImage*'/>
-<arg name='status' type='@' index='1' declared_type='NSString*'/>
+<method selector='showImage:status:' class_method='true'>
+<arg type='@' declared_type='UIImage*' index='0' name='image'/>
+<arg type='@' declared_type='NSString*' index='1' name='status'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='showSuccessWithStatus:'>
-<arg name='string' type='@' index='0' declared_type='NSString*'/>
+<method selector='showSuccessWithStatus:' class_method='true'>
+<arg type='@' declared_type='NSString*' index='0' name='string'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='showSuccessWithStatus:duration:'>
-<arg name='string' type='@' index='0' declared_type='NSString*'/>
-<arg name='duration' type='d' index='1' declared_type='NSTimeInterval'/>
+<method selector='showSuccessWithStatus:duration:' class_method='true'>
+<arg type='@' declared_type='NSString*' index='0' name='string'/>
+<arg type='d' declared_type='NSTimeInterval' index='1' name='duration'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='showWithMaskType:'>
-<arg name='maskType' type='I' index='0' declared_type='SVProgressHUDMaskType'/>
+<method selector='showWithMaskType:' class_method='true'>
+<arg type='I' declared_type='SVProgressHUDMaskType' index='0' name='maskType'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='showWithStatus:'>
-<arg name='status' type='@' index='0' declared_type='NSString*'/>
+<method selector='showWithStatus:' class_method='true'>
+<arg type='@' declared_type='NSString*' index='0' name='status'/>
 <retval type='v' declared_type='void'/>
 </method>
-<method class_method='true' selector='showWithStatus:maskType:'>
-<arg name='status' type='@' index='0' declared_type='NSString*'/>
-<arg name='maskType' type='I' index='1' declared_type='SVProgressHUDMaskType'/>
+<method selector='showWithStatus:maskType:' class_method='true'>
+<arg type='@' declared_type='NSString*' index='0' name='status'/>
+<arg type='I' declared_type='SVProgressHUDMaskType' index='1' name='maskType'/>
 <retval type='v' declared_type='void'/>
 </method>
 </class>
@@ -96,37 +93,37 @@
 <retval type='i' declared_type='int'/>
 </method>
 <method selector='setDashGap:'>
-<arg name='dashGap' type='i' index='0' declared_type='int'/>
+<arg type='i' declared_type='int' index='0' name='dashGap'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setDashStroke:'>
-<arg name='dashStroke' type='i' index='0' declared_type='int'/>
+<arg type='i' declared_type='int' index='0' name='dashStroke'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setDashWidth:'>
-<arg name='dashWidth' type='i' index='0' declared_type='int'/>
+<arg type='i' declared_type='int' index='0' name='dashWidth'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setDashWidth:dashGap:dashStroke:'>
-<arg name='dashWidth' type='i' index='0' declared_type='int'/>
-<arg name='dashGap' type='i' index='1' declared_type='int'/>
-<arg name='dashStroke' type='i' index='2' declared_type='int'/>
+<arg type='i' declared_type='int' index='0' name='dashWidth'/>
+<arg type='i' declared_type='int' index='1' name='dashGap'/>
+<arg type='i' declared_type='int' index='2' name='dashStroke'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setSelectedBackgroundViewGradientColors:'>
-<arg name='colors' type='@' index='0' declared_type='NSArray*'/>
+<arg type='@' declared_type='NSArray*' index='0' name='colors'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setSelectionGradientDirection:'>
-<arg name='direction' type='i' index='0' declared_type='StyledTableViewCellSelectionGradientDirection'/>
+<arg type='i' declared_type='StyledTableViewCellSelectionGradientDirection' index='0' name='direction'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setSeparatorColor:'>
-<arg name='separatorColor' type='@' index='0' declared_type='UIColor*'/>
+<arg type='@' declared_type='UIColor*' index='0' name='separatorColor'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setStyledTableViewCellSelectionStyle:'>
-<arg name='styledTableViewCellSelectionStyle' type='i' index='0' declared_type='StyledTableViewCellSelectionStyle'/>
+<arg type='i' declared_type='StyledTableViewCellSelectionStyle' index='0' name='styledTableViewCellSelectionStyle'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='styledTableViewCellSelectionStyle'>
@@ -147,19 +144,19 @@
 <retval type='@' declared_type='UIColor*'/>
 </method>
 <method selector='setDashGap:'>
-<arg name='dashGap' type='i' index='0' declared_type='int'/>
+<arg type='i' declared_type='int' index='0' name='dashGap'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setDashStroke:'>
-<arg name='dashStroke' type='i' index='0' declared_type='int'/>
+<arg type='i' declared_type='int' index='0' name='dashStroke'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setDashWidth:'>
-<arg name='dashWidth' type='i' index='0' declared_type='int'/>
+<arg type='i' declared_type='int' index='0' name='dashWidth'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setSeparatorColor:'>
-<arg name='separatorColor' type='@' index='0' declared_type='UIColor*'/>
+<arg type='@' declared_type='UIColor*' index='0' name='separatorColor'/>
 <retval type='v' declared_type='void'/>
 </method>
 </class>
@@ -171,11 +168,11 @@
 <retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='setGradientDirection:'>
-<arg name='gradientDirection' type='i' index='0' declared_type='StyledTableViewCellSelectionGradientDirection'/>
+<arg type='i' declared_type='StyledTableViewCellSelectionGradientDirection' index='0' name='gradientDirection'/>
 <retval type='v' declared_type='void'/>
 </method>
 <method selector='setSelectedBackgroundGradientColors:'>
-<arg name='selectedBackgroundGradientColors' type='@' index='0' declared_type='NSArray*'/>
+<arg type='@' declared_type='NSArray*' index='0' name='selectedBackgroundGradientColors'/>
 <retval type='v' declared_type='void'/>
 </method>
 </class>

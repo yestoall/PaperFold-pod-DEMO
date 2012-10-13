@@ -1,4 +1,4 @@
-class UserViewController < UIViewController
+class UserController < UIViewController
 
   def initWithTabBar
     me = init
