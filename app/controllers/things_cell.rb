@@ -8,7 +8,7 @@ class ThingsCell < UITableViewCell
         @back      = subview(UIView,  :back)
         @title     = subview(UILabel, :title)
         @count     = subview(UILabel, :count)
-        @separator = subview(UIView,  :separator)
+        subview(UIView,  :separator)
       end
       @count.layer.setCornerRadius(10)
       self
