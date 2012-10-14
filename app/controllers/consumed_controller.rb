@@ -15,9 +15,11 @@ class ConsumedController < UITableViewController
 
     view.rowHeight      = 50
     view.separatorStyle = UITableViewCellSeparatorStyleNone
+
+    # view.backgroundColor = 0x00FF00.uicolor
     # view.setSeparatorColor(0xCCCCCC.uicolor)
 
-    title = "BAGin"
+    navigationController.title = "BAGin"
 
     SVProgressHUD.showWithStatus "loading your BAG"
     # SVProgressHUD.show
@@ -34,6 +36,17 @@ class ConsumedController < UITableViewController
     # data.save
   end
 
+  def viewDidAppear(animated)
+    super
+    # view.move_to([0,100])
+    view.shake
+  end
+
+  # def viewDidDisappear(animated)
+  #   super
+  #   view.move_to([0,640])
+  # end
+
   def numberOfSectionsInTableView(tableView)
     1
   end
@@ -48,6 +61,8 @@ class ConsumedController < UITableViewController
   end
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+    cell = tableView.cellForRowAtIndexPath(indexPath)
+    cell.selected()
     thing_controller = ThingsController.alloc.init
     navigationController << thing_controller
     thing_controller.bind_with_thing(@things[indexPath.row])
