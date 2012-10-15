@@ -1,3 +1,4 @@
+
 include SugarCube::Adjust
 
 class AppDelegate
@@ -38,4 +39,3 @@ class Kernel
   end
 
 end
-    

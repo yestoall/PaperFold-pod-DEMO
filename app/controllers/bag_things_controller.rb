@@ -1,3 +1,4 @@
+
 class BagThingsController < UITableViewController
 
   def bind_with_thing(thing)

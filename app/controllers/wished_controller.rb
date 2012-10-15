@@ -1,3 +1,4 @@
+
 class WishedController < UIViewController
   def initWithTabBar
     me = init
