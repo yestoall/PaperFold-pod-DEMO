@@ -1,5 +1,5 @@
 
-class ConsumedController < UITableViewController
+class BagController < UITableViewController
 
   def initWithTabBar
     me = init
@@ -16,9 +16,6 @@ class ConsumedController < UITableViewController
     view.rowHeight      = 50
     view.separatorStyle = UITableViewCellSeparatorStyleNone
 
-    # view.backgroundColor = 0x00FF00.uicolor
-    # view.setSeparatorColor(0xCCCCCC.uicolor)
-
     navigationController.title = "BAGin"
 
     SVProgressHUD.showWithStatus "loading your BAG"
@@ -29,18 +26,13 @@ class ConsumedController < UITableViewController
       self.view.reloadData
       SVProgressHUD.dismiss
     }
-
-    # Parse.setApplicationId("Ks9i6obkdtMpCXaQVV6SHZCym0uTdmwTCGSUhnUc", clientKey:"RkC2BwMyoSoGTEtOaWGx92ZWyf191FM4tu8oJ0i5")
-    # data = PFObject.objectWithClassName("ThingObject")
-    # data.setObject("bar", forKey:"foo")
-    # data.save
   end
 
-  def viewDidAppear(animated)
-    super
-    # view.move_to([0,100])
-    view.shake
-  end
+  # def viewDidAppear(animated)
+  #   super
+  #   # view.move_to([0,100])
+  #   view.shake
+  # end
 
   # def viewDidDisappear(animated)
   #   super
@@ -57,13 +49,13 @@ class ConsumedController < UITableViewController
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
     thing = @things[indexPath.row]
-    ThingsCell.cell_data(thing, inTableView:tableView)
+    BagCell.with_data(thing, inTableView:tableView)
   end
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     cell = tableView.cellForRowAtIndexPath(indexPath)
     cell.selected()
-    thing_controller = ThingsController.alloc.init
+    thing_controller = BagThingsController.alloc.init
     navigationController << thing_controller
     thing_controller.bind_with_thing(@things[indexPath.row])
   end

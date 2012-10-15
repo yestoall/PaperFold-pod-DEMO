@@ -1,4 +1,4 @@
-class ThingsController < UITableViewController
+class BagThingsController < UITableViewController
 
   def bind_with_thing(thing)
     @thing = thing["data"]
