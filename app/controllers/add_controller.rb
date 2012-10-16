@@ -1,4 +1,6 @@
 
+# only for test
+
 class AddController < UIViewController
 
   def initWithTabBar
