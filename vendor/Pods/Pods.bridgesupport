@@ -1,5 +1,19 @@
 <?xml version='1.0'?>
 <signatures version='1.0'>
+<enum value='0' name='MPFlipStyleDefault'/>
+<enum value='1' name='MPFlipStyleDirectionBackward'/>
+<enum value='1' name='MPFlipStyleDirectionMask'/>
+<enum value='2' name='MPFlipStyleOrientationMask'/>
+<enum value='2' name='MPFlipStyleOrientationVertical'/>
+<enum value='4' name='MPFlipStylePerspectiveMask'/>
+<enum value='4' name='MPFlipStylePerspectiveReverse'/>
+<enum value='2' name='MPFoldStyleCubic'/>
+<enum value='0' name='MPFoldStyleDefault'/>
+<enum value='4' name='MPFoldStyleHorizontal'/>
+<enum value='1' name='MPFoldStyleUnfold'/>
+<enum value='0' name='MPTransitionActionAddRemove'/>
+<enum value='2' name='MPTransitionActionNone'/>
+<enum value='1' name='MPTransitionActionShowHide'/>
 <enum value='3' name='SVProgressHUDMaskTypeBlack'/>
 <enum value='2' name='SVProgressHUDMaskTypeClear'/>
 <enum value='4' name='SVProgressHUDMaskTypeGradient'/>
@@ -13,167 +27,589 @@
 <enum value='2' name='StyledTableViewCellSelectionStyleGreen'/>
 <enum value='4' name='StyledTableViewCellSelectionStylePurple'/>
 <enum value='3' name='StyledTableViewCellSelectionStyleYellow'/>
+<function name='MPFlipStyleFlipDirectionBit' inline='true'>
+<arg type='I' name='style' declared_type='MPFlipStyle'/>
+<retval type='I' declared_type='MPFlipStyle'/>
+</function>
+<function name='MPFoldStyleFlipFoldBit' inline='true'>
+<arg type='I' name='style' declared_type='MPFoldStyle'/>
+<retval type='I' declared_type='MPFoldStyle'/>
+</function>
+<class name='MPAnimation'>
+<method class_method='true' selector='renderImageForAntialiasing:'>
+<arg index='0' type='@' name='image' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='renderImageForAntialiasing:withInsets:'>
+<arg index='0' type='@' name='image' declared_type='id'/>
+<arg index='1' type='@' name='insets' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='renderImageFromView:'>
+<arg index='0' type='@' name='view' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='renderImageFromView:withRect:'>
+<arg index='0' type='@' name='view' declared_type='id'/>
+<arg index='1' type='@' name='frame' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='renderImageFromView:withRect:transparentInsets:'>
+<arg index='0' type='@' name='view' declared_type='id'/>
+<arg index='1' type='@' name='frame' declared_type='id'/>
+<arg index='2' type='@' name='insets' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='MPFlipSegue'>
+<method selector='perform'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setStyle:'>
+<arg index='0' type='I' name='style' declared_type='MPFlipStyle'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='style'>
+<retval type='I' declared_type='MPFlipStyle'/>
+</method>
+</class>
+<class name='MPFlipTransition'>
+<method selector='buildLayers'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='coveredPageShadowOpacity'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method class_method='true' selector='dismissViewControllerFromPresentingController:duration:style:completion:'>
+<arg index='0' type='@' name='presentingController' declared_type='UIViewController*'/>
+<arg index='1' type='d' name='duration' declared_type='NSTimeInterval'/>
+<arg index='2' type='I' name='style' declared_type='MPFlipStyle'/>
+<arg index='3' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='doFlip1:'>
+<arg index='0' type='f' name='progress' declared_type='CGFloat'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='doFlip2:'>
+<arg index='0' type='f' name='progress' declared_type='CGFloat'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='flipShadowColor'>
+<retval type='@' declared_type='UIColor*'/>
+</method>
+<method selector='flippingPageShadowOpacity'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='initWithSourceView:destinationView:duration:style:completionAction:'>
+<arg index='0' type='@' name='sourceView' declared_type='UIView*'/>
+<arg index='1' type='@' name='destinationView' declared_type='UIView*'/>
+<arg index='2' type='d' name='duration' declared_type='NSTimeInterval'/>
+<arg index='3' type='I' name='style' declared_type='MPFlipStyle'/>
+<arg index='4' type='i' name='action' declared_type='MPTransitionAction'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='perform:'>
+<arg index='0' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='presentViewController:from:duration:style:completion:'>
+<arg index='0' type='@' name='viewControllerToPresent' declared_type='UIViewController*'/>
+<arg index='1' type='@' name='presentingController' declared_type='UIViewController*'/>
+<arg index='2' type='d' name='duration' declared_type='NSTimeInterval'/>
+<arg index='3' type='I' name='style' declared_type='MPFlipStyle'/>
+<arg index='4' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCoveredPageShadowOpacity:'>
+<arg index='0' type='f' name='coveredPageShadowOpacity' declared_type='CGFloat'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFlipShadowColor:'>
+<arg index='0' type='@' name='flipShadowColor' declared_type='UIColor*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFlippingPageShadowOpacity:'>
+<arg index='0' type='f' name='flippingPageShadowOpacity' declared_type='CGFloat'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setStyle:'>
+<arg index='0' type='I' name='style' declared_type='MPFlipStyle'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='style'>
+<retval type='I' declared_type='MPFlipStyle'/>
+</method>
+<method class_method='true' selector='transitionFromView:toView:duration:style:transitionAction:completion:'>
+<arg index='0' type='@' name='fromView' declared_type='UIView*'/>
+<arg index='1' type='@' name='toView' declared_type='UIView*'/>
+<arg index='2' type='d' name='duration' declared_type='NSTimeInterval'/>
+<arg index='3' type='I' name='style' declared_type='MPFlipStyle'/>
+<arg index='4' type='i' name='action' declared_type='MPTransitionAction'/>
+<arg index='5' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='transitionFromViewController:toViewController:duration:style:completion:'>
+<arg index='0' type='@' name='fromController' declared_type='UIViewController*'/>
+<arg index='1' type='@' name='toController' declared_type='UIViewController*'/>
+<arg index='2' type='d' name='duration' declared_type='NSTimeInterval'/>
+<arg index='3' type='I' name='style' declared_type='MPFlipStyle'/>
+<arg index='4' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='MPFoldNavPopSegue'>
+<method selector='perform'>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='MPFoldNavPushSegue'>
+<method selector='perform'>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='MPFoldSegue'>
+<method selector='setStyle:'>
+<arg index='0' type='I' name='style' declared_type='MPFoldStyle'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='style'>
+<retval type='I' declared_type='MPFoldStyle'/>
+</method>
+</class>
+<class name='MPFoldTransition'>
+<method class_method='true' selector='dismissViewControllerFromPresentingController:duration:style:completion:'>
+<arg index='0' type='@' name='presentingController' declared_type='UIViewController*'/>
+<arg index='1' type='d' name='duration' declared_type='NSTimeInterval'/>
+<arg index='2' type='I' name='style' declared_type='MPFoldStyle'/>
+<arg index='3' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='foldShadowColor'>
+<retval type='@' declared_type='UIColor*'/>
+</method>
+<method selector='foldShadowOpacity'>
+<retval type='f' declared_type='CGFloat'/>
+</method>
+<method selector='initWithSourceView:destinationView:duration:style:completionAction:'>
+<arg index='0' type='@' name='sourceView' declared_type='UIView*'/>
+<arg index='1' type='@' name='destinationView' declared_type='UIView*'/>
+<arg index='2' type='d' name='duration' declared_type='NSTimeInterval'/>
+<arg index='3' type='I' name='style' declared_type='MPFoldStyle'/>
+<arg index='4' type='i' name='action' declared_type='MPTransitionAction'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='perform:'>
+<arg index='0' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='presentViewController:from:duration:style:completion:'>
+<arg index='0' type='@' name='viewControllerToPresent' declared_type='UIViewController*'/>
+<arg index='1' type='@' name='presentingController' declared_type='UIViewController*'/>
+<arg index='2' type='d' name='duration' declared_type='NSTimeInterval'/>
+<arg index='3' type='I' name='style' declared_type='MPFoldStyle'/>
+<arg index='4' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFoldShadowColor:'>
+<arg index='0' type='@' name='foldShadowColor' declared_type='UIColor*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFoldShadowOpacity:'>
+<arg index='0' type='f' name='foldShadowOpacity' declared_type='CGFloat'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setStyle:'>
+<arg index='0' type='I' name='style' declared_type='MPFoldStyle'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='style'>
+<retval type='I' declared_type='MPFoldStyle'/>
+</method>
+<method class_method='true' selector='transitionFromView:toView:duration:style:transitionAction:completion:'>
+<arg index='0' type='@' name='fromView' declared_type='UIView*'/>
+<arg index='1' type='@' name='toView' declared_type='UIView*'/>
+<arg index='2' type='d' name='duration' declared_type='NSTimeInterval'/>
+<arg index='3' type='I' name='style' declared_type='MPFoldStyle'/>
+<arg index='4' type='i' name='action' declared_type='MPTransitionAction'/>
+<arg index='5' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='transitionFromViewController:toViewController:duration:style:completion:'>
+<arg index='0' type='@' name='fromController' declared_type='UIViewController*'/>
+<arg index='1' type='@' name='toController' declared_type='UIViewController*'/>
+<arg index='2' type='d' name='duration' declared_type='NSTimeInterval'/>
+<arg index='3' type='I' name='style' declared_type='MPFoldStyle'/>
+<arg index='4' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='MPTransition'>
+<method selector='calculateRect'>
+<retval type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect'/>
+</method>
+<method selector='completionAction'>
+<retval type='i' declared_type='MPTransitionAction'/>
+</method>
+<method class_method='true' selector='defaultDuration'>
+<retval type='d' declared_type='NSTimeInterval'/>
+</method>
+<method selector='destinationView'>
+<retval type='@' declared_type='UIView*'/>
+</method>
+<method selector='duration'>
+<retval type='d' declared_type='NSTimeInterval'/>
+</method>
+<method selector='initWithSourceView:destinationView:duration:timingCurve:completionAction:'>
+<arg index='0' type='@' name='sourceView' declared_type='UIView*'/>
+<arg index='1' type='@' name='destinationView' declared_type='UIView*'/>
+<arg index='2' type='d' name='duration' declared_type='NSTimeInterval'/>
+<arg index='3' type='i' name='timingCurve' declared_type='UIViewAnimationCurve'/>
+<arg index='4' type='i' name='action' declared_type='MPTransitionAction'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='isDimissing'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='m34'>
+<retval type='f' declared_type='float'/>
+</method>
+<method selector='perform'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='perform:'>
+<arg index='0' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='presentedControllerIncludesStatusBarInFrame'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='rect'>
+<retval type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect'/>
+</method>
+<method selector='setCompletionAction:'>
+<arg index='0' type='i' name='completionAction' declared_type='MPTransitionAction'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDestinationView:'>
+<arg index='0' type='@' name='destinationView' declared_type='UIView*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDismissing:'>
+<arg index='0' type='B' name='dismissing' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDuration:'>
+<arg index='0' type='d' name='duration' declared_type='NSTimeInterval'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setM34:'>
+<arg index='0' type='f' name='m34' declared_type='float'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPresentedController:'>
+<arg index='0' type='@' name='presentedController' declared_type='UIViewController*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPresentingController:'>
+<arg index='0' type='@' name='presentingController' declared_type='UIViewController*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setRect:'>
+<arg index='0' type='{CGRect={CGPoint=ff}{CGSize=ff}}' name='rect' declared_type='CGRect'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSourceView:'>
+<arg index='0' type='@' name='sourceView' declared_type='UIView*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTimingCurve:'>
+<arg index='0' type='i' name='timingCurve' declared_type='UIViewAnimationCurve'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='sourceView'>
+<retval type='@' declared_type='UIView*'/>
+</method>
+<method selector='timingCurve'>
+<retval type='i' declared_type='UIViewAnimationCurve'/>
+</method>
+<method selector='timingCurveFunctionName'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='transitionDidComplete'>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
 <class name='SVProgressHUD'>
 <method class_method='true' selector='dismiss'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='dismissWithError:'>
-<arg declared_type='NSString*' index='0' type='@' name='errorString'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='errorString' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='dismissWithError:afterDelay:'>
-<arg declared_type='NSString*' index='0' type='@' name='errorString'/>
-<arg declared_type='NSTimeInterval' index='1' type='d' name='seconds'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='errorString' declared_type='NSString*'/>
+<arg index='1' type='d' name='seconds' declared_type='NSTimeInterval'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='dismissWithSuccess:'>
-<arg declared_type='NSString*' index='0' type='@' name='successString'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='successString' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='dismissWithSuccess:afterDelay:'>
-<arg declared_type='NSString*' index='0' type='@' name='successString'/>
-<arg declared_type='NSTimeInterval' index='1' type='d' name='seconds'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='successString' declared_type='NSString*'/>
+<arg index='1' type='d' name='seconds' declared_type='NSTimeInterval'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='isVisible'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method class_method='true' selector='setStatus:'>
-<arg declared_type='NSString*' index='0' type='@' name='string'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='string' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='show'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='showErrorWithStatus:'>
-<arg declared_type='NSString*' index='0' type='@' name='string'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='string' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='showErrorWithStatus:duration:'>
-<arg declared_type='NSString*' index='0' type='@' name='string'/>
-<arg declared_type='NSTimeInterval' index='1' type='d' name='duration'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='string' declared_type='NSString*'/>
+<arg index='1' type='d' name='duration' declared_type='NSTimeInterval'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='showImage:status:'>
-<arg declared_type='UIImage*' index='0' type='@' name='image'/>
-<arg declared_type='NSString*' index='1' type='@' name='status'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='image' declared_type='UIImage*'/>
+<arg index='1' type='@' name='status' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='showSuccessWithStatus:'>
-<arg declared_type='NSString*' index='0' type='@' name='string'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='string' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='showSuccessWithStatus:duration:'>
-<arg declared_type='NSString*' index='0' type='@' name='string'/>
-<arg declared_type='NSTimeInterval' index='1' type='d' name='duration'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='string' declared_type='NSString*'/>
+<arg index='1' type='d' name='duration' declared_type='NSTimeInterval'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='showWithMaskType:'>
-<arg declared_type='SVProgressHUDMaskType' index='0' type='I' name='maskType'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='I' name='maskType' declared_type='SVProgressHUDMaskType'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='showWithStatus:'>
-<arg declared_type='NSString*' index='0' type='@' name='status'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='status' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='showWithStatus:maskType:'>
-<arg declared_type='NSString*' index='0' type='@' name='status'/>
-<arg declared_type='SVProgressHUDMaskType' index='1' type='I' name='maskType'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='status' declared_type='NSString*'/>
+<arg index='1' type='I' name='maskType' declared_type='SVProgressHUDMaskType'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='StyledTableViewCell'>
 <method selector='dashGap'>
-<retval declared_type='int' type='i'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method selector='dashStroke'>
-<retval declared_type='int' type='i'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method selector='dashWidth'>
-<retval declared_type='int' type='i'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method selector='setDashGap:'>
-<arg declared_type='int' index='0' type='i' name='dashGap'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='i' name='dashGap' declared_type='int'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setDashStroke:'>
-<arg declared_type='int' index='0' type='i' name='dashStroke'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='i' name='dashStroke' declared_type='int'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setDashWidth:'>
-<arg declared_type='int' index='0' type='i' name='dashWidth'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='i' name='dashWidth' declared_type='int'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setDashWidth:dashGap:dashStroke:'>
-<arg declared_type='int' index='0' type='i' name='dashWidth'/>
-<arg declared_type='int' index='1' type='i' name='dashGap'/>
-<arg declared_type='int' index='2' type='i' name='dashStroke'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='i' name='dashWidth' declared_type='int'/>
+<arg index='1' type='i' name='dashGap' declared_type='int'/>
+<arg index='2' type='i' name='dashStroke' declared_type='int'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setSelectedBackgroundViewGradientColors:'>
-<arg declared_type='NSArray*' index='0' type='@' name='colors'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='colors' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setSelectionGradientDirection:'>
-<arg declared_type='StyledTableViewCellSelectionGradientDirection' index='0' type='i' name='direction'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='i' name='direction' declared_type='StyledTableViewCellSelectionGradientDirection'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setSeparatorColor:'>
-<arg declared_type='UIColor*' index='0' type='@' name='separatorColor'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='separatorColor' declared_type='UIColor*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setStyledTableViewCellSelectionStyle:'>
-<arg declared_type='StyledTableViewCellSelectionStyle' index='0' type='i' name='styledTableViewCellSelectionStyle'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='i' name='styledTableViewCellSelectionStyle' declared_type='StyledTableViewCellSelectionStyle'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='styledTableViewCellSelectionStyle'>
-<retval declared_type='StyledTableViewCellSelectionStyle' type='i'/>
+<retval type='i' declared_type='StyledTableViewCellSelectionStyle'/>
 </method>
 </class>
 <class name='StyledTableViewCellBackgroundView'>
 <method selector='dashGap'>
-<retval declared_type='int' type='i'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method selector='dashStroke'>
-<retval declared_type='int' type='i'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method selector='dashWidth'>
-<retval declared_type='int' type='i'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method selector='separatorColor'>
-<retval declared_type='UIColor*' type='@'/>
+<retval type='@' declared_type='UIColor*'/>
 </method>
 <method selector='setDashGap:'>
-<arg declared_type='int' index='0' type='i' name='dashGap'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='i' name='dashGap' declared_type='int'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setDashStroke:'>
-<arg declared_type='int' index='0' type='i' name='dashStroke'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='i' name='dashStroke' declared_type='int'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setDashWidth:'>
-<arg declared_type='int' index='0' type='i' name='dashWidth'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='i' name='dashWidth' declared_type='int'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setSeparatorColor:'>
-<arg declared_type='UIColor*' index='0' type='@' name='separatorColor'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='separatorColor' declared_type='UIColor*'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='StyledTableViewCellSelectedBackgroundView'>
 <method selector='gradientDirection'>
-<retval declared_type='StyledTableViewCellSelectionGradientDirection' type='i'/>
+<retval type='i' declared_type='StyledTableViewCellSelectionGradientDirection'/>
 </method>
 <method selector='selectedBackgroundGradientColors'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='setGradientDirection:'>
-<arg declared_type='StyledTableViewCellSelectionGradientDirection' index='0' type='i' name='gradientDirection'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='i' name='gradientDirection' declared_type='StyledTableViewCellSelectionGradientDirection'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setSelectedBackgroundGradientColors:'>
-<arg declared_type='NSArray*' index='0' type='@' name='selectedBackgroundGradientColors'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' type='@' name='selectedBackgroundGradientColors' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='UINavigationController'>
+<method selector='popViewControllerWithFlipStyle:'>
+<arg index='0' type='I' name='style' declared_type='MPFlipStyle'/>
+<retval type='@' declared_type='UIViewController*'/>
+</method>
+<method selector='popViewControllerWithFoldStyle:'>
+<arg index='0' type='I' name='style' declared_type='MPFoldStyle'/>
+<retval type='@' declared_type='UIViewController*'/>
+</method>
+<method selector='pushViewController:flipStyle:'>
+<arg index='0' type='@' name='viewController' declared_type='UIViewController*'/>
+<arg index='1' type='I' name='style' declared_type='MPFlipStyle'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='pushViewController:foldStyle:'>
+<arg index='0' type='@' name='viewController' declared_type='UIViewController*'/>
+<arg index='1' type='I' name='style' declared_type='MPFoldStyle'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='UIView'>
+<method selector='isAboveSiblingView:'>
+<arg index='0' type='@' name='siblingView' declared_type='UIView*'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='isBelowSiblingView:'>
+<arg index='0' type='@' name='siblingView' declared_type='UIView*'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method class_method='true' selector='subView:isAboveSubView:'>
+<arg index='0' type='@' name='subView1' declared_type='UIView*'/>
+<arg index='1' type='@' name='subView2' declared_type='UIView*'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method class_method='true' selector='subView:isBelowSubView:'>
+<arg index='0' type='@' name='subView1' declared_type='UIView*'/>
+<arg index='1' type='@' name='subView2' declared_type='UIView*'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+</class>
+<class name='UIViewController'>
+<method selector='dismissViewControllerWithFlipStyle:completion:'>
+<arg index='0' type='I' name='style' declared_type='MPFlipStyle'/>
+<arg index='1' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='dismissViewControllerWithFoldStyle:completion:'>
+<arg index='0' type='I' name='style' declared_type='MPFoldStyle'/>
+<arg index='1' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='presentViewController:flipStyle:completion:'>
+<arg index='0' type='@' name='viewControllerToPresent' declared_type='UIViewController*'/>
+<arg index='1' type='I' name='style' declared_type='MPFlipStyle'/>
+<arg index='2' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='presentViewController:foldStyle:completion:'>
+<arg index='0' type='@' name='viewControllerToPresent' declared_type='UIViewController*'/>
+<arg index='1' type='I' name='style' declared_type='MPFoldStyle'/>
+<arg index='2' function_pointer='true' type='@?' name='completion' declared_type='void (^)(BOOL)'>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 </signatures>

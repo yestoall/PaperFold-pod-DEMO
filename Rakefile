@@ -18,5 +18,6 @@ Motion::Project::App.setup do |app|
   app.pods do
     pod "StyledTableViewCell-for-iOS"
     pod "SVProgressHUD"
+    pod "MPFoldTransition"
   end
 end

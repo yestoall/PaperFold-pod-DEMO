@@ -1,13 +1,16 @@
 
 PODS:
+- MPFoldTransition (0.0.1)
 - SVProgressHUD (0.8)
 - StyledTableViewCell-for-iOS (1.0)
 
 DEPENDENCIES:
+- MPFoldTransition
 - SVProgressHUD
 - StyledTableViewCell-for-iOS
 
 SPEC CHECKSUMS:
+  MPFoldTransition: 65c1a3bcb5c8e5a179621f844e970666d89aa3a8
   SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
   StyledTableViewCell-for-iOS: 0e687f1cc033ceae0c1fb8c92a4cb38ec8690010
 
