@@ -1,14 +1,15 @@
 
 PODS:
-- SVProgressHUD (0.8)
-- StyledTableViewCell-for-iOS (1.0)
+- PaperFold-pod (0.1)
 
 DEPENDENCIES:
-- SVProgressHUD
-- StyledTableViewCell-for-iOS
+- PaperFold-pod (from `https://github.com/yestoall/PaperFold-pod.git')
+
+EXTERNAL SOURCES:
+  PaperFold-pod:
+    :git: https://github.com/yestoall/PaperFold-pod.git
 
 SPEC CHECKSUMS:
-  SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
-  StyledTableViewCell-for-iOS: 0e687f1cc033ceae0c1fb8c92a4cb38ec8690010
+  PaperFold-pod: 1ee84bbee72e396aecefa953686d4facf109edab
 
 COCOAPODS: 0.15.1

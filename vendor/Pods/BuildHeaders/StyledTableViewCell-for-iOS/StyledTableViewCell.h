@@ -1,1 +1,0 @@
-../../StyledTableViewCell-for-iOS/StyledTableViewCell/StyledTableViewCell.h
