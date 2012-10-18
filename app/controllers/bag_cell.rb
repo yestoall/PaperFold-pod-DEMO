@@ -24,7 +24,7 @@ class BagCell < UITableViewCell
 
   def fill_data(data,inTableView:tableView)
     @title.text = data["kind"]
-    @count.text = "#{data['data'].length}"
+    @count.text = "#{data["count"]}"
   end
 
   def selected

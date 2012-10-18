@@ -1,5 +1,6 @@
 
 class WishedController < UIViewController
+  
   def initWithTabBar
     me = init
     img_on  = "tabbar_icon_wish".uiimage

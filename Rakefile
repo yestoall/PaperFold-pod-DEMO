@@ -4,10 +4,10 @@ require "motion/project"
 #require "bubble-wrap/all"
 require "teacup"
 require "sugarcube"
+require "sweettea"
 require "formotion"
 require "geomotion"
 require "motion-cocoapods"
-require "sweettea"
 
 Motion::Project::App.setup do |app|
   app.name             = "BAG"
@@ -18,6 +18,10 @@ Motion::Project::App.setup do |app|
   app.pods do
     pod "StyledTableViewCell-for-iOS"
     pod "SVProgressHUD"
-    pod "MPFoldTransition"
+    # pod "MPFoldTransition"
   end
+
+  app.vendor_project('vendor/PaperFold', :xcode,
+      :target => 'PaperFold',
+      :headers_dir => 'PaperFold')  
 end

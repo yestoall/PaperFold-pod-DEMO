@@ -3,5 +3,5 @@ PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
 ALWAYS_SEARCH_USER_PATHS = YES
 OTHER_LDFLAGS = -ObjC -framework QuartzCore
 HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
-PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/MPFoldTransition" "${PODS_ROOT}/BuildHeaders/SVProgressHUD" "${PODS_ROOT}/BuildHeaders/StyledTableViewCell-for-iOS"
-PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/MPFoldTransition" "${PODS_ROOT}/Headers/SVProgressHUD" "${PODS_ROOT}/Headers/StyledTableViewCell-for-iOS"
+PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/SVProgressHUD" "${PODS_ROOT}/BuildHeaders/StyledTableViewCell-for-iOS"
+PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/SVProgressHUD" "${PODS_ROOT}/Headers/StyledTableViewCell-for-iOS"
