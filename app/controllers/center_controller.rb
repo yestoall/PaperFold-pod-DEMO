@@ -1,14 +1,11 @@
 
 class CenterController < UITableViewController
 
-  def self.initWithFrame(frame)
-    if super
-      super
-    end
+  def initWithFrame(frame)
   end
 
   def viewDidLoad
-    super
+    # super 
 
     @table = [
       { "id" => 1,  "name" => "uno" },
@@ -16,10 +13,10 @@ class CenterController < UITableViewController
       { "id" => 3,  "name" => "tres" }
     ]
 
-    view.rowHeight      = 50
+    view.rowHeight = 50
 
-    left = LeftView.alloc.initWithFrame(CGRectMake(0,0,100,self.view.bounds.size.height))
-    view.addSubview(left)
+    # left = LeftView.alloc.initWithFrame(CGRectMake(0,0,100,self.view.bounds.size.height))
+    # view.addSubview(left)
   end
 
   def numberOfSectionsInTableView(tableView)
