@@ -50,19 +50,19 @@ class DemoController < UIViewController
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
     cellID = "cell"
     cell = tableView.dequeueReusableCellWithIdentifier(cellID) || begin
-      cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier:cellID)
-      cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton
+      cell                = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier:cellID)
+      cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator
+      cell.selectionStyle = UITableViewCellSelectionStyleGray
       cell
     end
 
-    datos = @data[indexPath.row]
-    cell.textLabel.text = datos["name"]
+    item = @data[indexPath.row]
+    cell.textLabel.text = item["name"]
     cell
   end
 
-  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
-    # cell = tableView.cellForRowAtIndexPath(indexPath)
-  end
-
+  # def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+  #   # cell = tableView.cellForRowAtIndexPath(indexPath)
+  # end
 
 end

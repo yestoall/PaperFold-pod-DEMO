@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+$:.unshift("/Library/RubyMotion/lib")
+require "motion/project"
+require "sugarcube"
+require "motion-cocoapods"
+require "simple-view"
+
+Motion::Project::App.setup do |app|
+  app.name             = "PaperFold 2"
+  app.version          = "1.0"
+  app.pods do
+    pod "PaperFold-pod", :git => "https://github.com/yestoall/PaperFold-pod.git"
+  end
+end
