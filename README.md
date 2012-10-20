@@ -4,10 +4,8 @@
 
 i've port these great cocoa paper fold code to a cocoapod, for use it in rubymotion proyects
 
-you need two gems for playing with these demos:
-> require "sugarcube"
-> require "motion-cocoapods"
+you need two gems for playing with these demos: "**sugarcube**" and "**motion-cocoapods**"
 
 nacho@yestoall.com for any comments and suggestions
 
-* sorry about my english, my spanish is better (for sure)
+(sorry about my english, my spanish is better)
