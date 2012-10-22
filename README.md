@@ -1,6 +1,6 @@
 # PaperFold cocoapod DEMO
 
-**rubymotion** demos for **PaperFold-iOS** (original created by honchoing -> https://github.com/honcheng/PaperFold-for-iOS)
+**rubymotion** demos for **PaperFold-iOS** (original created by honcheng -> https://github.com/honcheng/PaperFold-for-iOS)
 
 i've port these great cocoa paper fold code to a cocoapod, for use it in rubymotion proyects
 
