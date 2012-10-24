@@ -1,8 +1,7 @@
 .DS_Store
-**/.DS_Store
-**/.repl_history
-**/build
-**/resources/*.nib
-**/resources/*.momd
-**/resources/*.storyboardc
-**/vendor/**
+build/
+**/build/
+*.nib
+*.momd
+*.storyboardc
+vendor/Pods
