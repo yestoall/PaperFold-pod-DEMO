@@ -1,1 +1,0 @@
-../../PaperFold-pod/PaperFoldSwipeHintView.h

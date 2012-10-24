@@ -4,4 +4,4 @@ build/
 *.nib
 *.momd
 *.storyboardc
-vendor/Pods
+demo*/vendor/Pods
