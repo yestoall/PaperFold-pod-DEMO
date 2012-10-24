@@ -1,0 +1,15 @@
+
+PODS:
+- PaperFold-pod (0.1)
+
+DEPENDENCIES:
+- PaperFold-pod (from `https://github.com/yestoall/PaperFold-pod.git')
+
+EXTERNAL SOURCES:
+  PaperFold-pod:
+    :git: https://github.com/yestoall/PaperFold-pod.git
+
+SPEC CHECKSUMS:
+  PaperFold-pod: 1ee84bbee72e396aecefa953686d4facf109edab
+
+COCOAPODS: 0.15.2
