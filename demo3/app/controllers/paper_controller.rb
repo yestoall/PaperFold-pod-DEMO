@@ -8,11 +8,13 @@ class PaperController < UIViewController
   BACKGROUND_COLOR = 0x000000.uicolor
 
   def init rootViewController
+    super()
+
     view.setAutoresizesSubviews(true)
     
     bounds = view.bounds.size
 
-    @paper = PaperFoldView.alloc.initWithFrame([[0,0],[bounds.width,bounds.height]])
+    @paper = PaperFoldView.alloc.initWithFrame(view.bounds)
     @paper.setBackgroundColor(BACKGROUND_COLOR)
     view << @paper
 
@@ -20,7 +22,7 @@ class PaperController < UIViewController
     @paper.setAutoresizingMask(UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth)
 
     @root = rootViewController
-    @root.view.setFrame([[0,0],[bounds.width,bounds.height]])
+    @root.view.setFrame(view.bounds)
     @root.view.setAutoresizingMask(UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth)
     @paper.setCenterContentView(@root.view)
 

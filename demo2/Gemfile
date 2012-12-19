@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+gem 'rake', '0.9.5'
+gem 'cocoapods'
+gem 'motion-cocoapods'
+gem 'sugarcube'
