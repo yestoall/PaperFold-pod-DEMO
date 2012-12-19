@@ -8,6 +8,8 @@ class PaperController < UIViewController
   BACKGROUND_COLOR = 0x000000.uicolor
 
   def init rootViewController
+    super()
+
     view.setAutoresizesSubviews(true)
     
     bounds = view.bounds.size

@@ -2,6 +2,7 @@
 class BottomController < UIViewController
 
   def init
+    super
 
     bounds = view.bounds.size
 

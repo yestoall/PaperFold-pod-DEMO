@@ -2,6 +2,7 @@
 class AppController < UIViewController
 
   def init
+    super
 
     bounds = view.bounds.size
 

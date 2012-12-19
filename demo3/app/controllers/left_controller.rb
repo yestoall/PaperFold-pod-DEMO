@@ -2,6 +2,7 @@
 class LeftController < UIViewController
 
   def init
+    super
 
     bounds = view.bounds.size
     view.backgroundColor = 0x000000.uicolor

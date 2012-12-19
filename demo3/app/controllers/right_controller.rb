@@ -2,6 +2,7 @@
 class RightController < UIViewController
 
   def init
+    super
 
     bounds = view.bounds.size
 
